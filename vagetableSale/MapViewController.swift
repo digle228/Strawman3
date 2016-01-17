@@ -59,7 +59,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        var notification:UILocalNotification = UILocalNotification()
+        notification.alertBody = "熱門訊息通知!"
+        notification.fireDate = NSDate(timeIntervalSinceNow: 1)
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
         
         
         
