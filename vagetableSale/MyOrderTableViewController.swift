@@ -12,23 +12,22 @@ import SwiftyJSON
 
 class MyOrderTableViewController: UITableViewController {
     
-    var userData = [Data]()
     
     
-    
-    
+    @IBOutlet var dataTableView: UITableView!
+
+    var userData = [String]()
 
     
     func getDataFromServer(){
         let userUrl = "http://139.162.37.39/api/v1"
-        let apiPath = userUrl + "/users"
+        let apiPath = userUrl + "/users/"
         
         
         Alamofire.request(.GET, apiPath,parameters: nil).responseJSON { response in switch response.result {
         case .Success(let data):
             
             let result = JSON(data)["data"]
-
         
         for (_, subJson):(String, JSON) in result {
             
@@ -37,28 +36,36 @@ class MyOrderTableViewController: UITableViewController {
             let address = subJson["address"].stringValue
             let mobil_num = subJson["mobil_num"].stringValue
             let email = subJson["email"].stringValue
-            let user = Data(id: id, name: name, address: address, mobil_num: mobil_num, email: email)
-            
-            
-            self.userData.append(user)
-            print("\(user)")
-            
-            
+            let user = ([id: id, name: name, address: address, mobil_num: mobil_num, email: email])
+
+//            print(" \(user)")
+
+            self.userData.append(id)
+            self.userData.append(name)
+            self.userData.append(address)
+            self.userData.append(mobil_num)
+            self.userData.append(email)
+
+
+
+
+
             
         }
         case .Failure(let error):
             print(error)
             
             }
+            self.dataTableView.reloadData()
 
         }
-        self.tableView.reloadData()
 
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getDataFromServer()
+
 
         
     }
@@ -70,38 +77,31 @@ class MyOrderTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
-
+        return userData.count
+        
     }
 
-    @IBOutlet var dataTableView: UITableView!
     
 
     
+    @IBOutlet weak var textLabel: UILabel!
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-
- let cell = tableView.dequeueReusableCellWithIdentifier("cellStyle",forIndexPath: indexPath) as! CookTableViewCell
+  let cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath)
        
-//        switch indexPath.section  {
-//        case 0:
-//            cell.vagetableNameLabel?.text = userData[indexPath.row]
-//        case 1:
-//            cell.vagetableNameLabel?.text = userData[indexPath.row]
-//        case 2:
-//            cell.vagetableNameLabel?.text = userData[indexPath.row]
-//        case 3:
-//            cell.vagetableNameLabel?.text = userData[indexPath.row]
+        cell.textLabel?.text = userData[indexPath.row]
         
+        print(" \(self.userData)")
+
         return cell
     }
     
@@ -152,3 +152,6 @@ class MyOrderTableViewController: UITableViewController {
     */
 
 }
+
+
+

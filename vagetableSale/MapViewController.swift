@@ -48,7 +48,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         print("\(userLocation.location?.coordinate)")
         
-
         
         let region = MKCoordinateRegionMakeWithDistance(userLocation.location! .coordinate, 1000, 1000)
         mapView.setRegion(region, animated: true)
@@ -59,6 +58,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest

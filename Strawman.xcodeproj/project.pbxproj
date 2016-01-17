@@ -34,6 +34,7 @@
 		91E1BF321C377CBB00D15B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E1BF301C377CBB00D15B41 /* Main.storyboard */; };
 		91E1BF341C377CBB00D15B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E1BF331C377CBB00D15B41 /* Assets.xcassets */; };
 		91E1BF371C377CBB00D15B41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E1BF351C377CBB00D15B41 /* LaunchScreen.storyboard */; };
+		91E59BD01C4B725300E97F73 /* Json.json in Resources */ = {isa = PBXBuildFile; fileRef = 91E59BCF1C4B725300E97F73 /* Json.json */; };
 		CF1545AB372910D967A26A60 /* Pods_vagetableSale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C4C8A5CD4F74564D1CD322 /* Pods_vagetableSale.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		91E1BF331C377CBB00D15B41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91E1BF361C377CBB00D15B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91E1BF381C377CBB00D15B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91E59BCF1C4B725300E97F73 /* Json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Json.json; sourceTree = "<group>"; };
 		B1C4C8A5CD4F74564D1CD322 /* Pods_vagetableSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vagetableSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				91D817381C4A312900A06D06 /* MyOrderTableViewController.swift */,
 				91D8173A1C4A4B7400A06D06 /* MyDataViewController.swift */,
 				911644201C42415C00F9777F /* Data */,
+				91E59BCF1C4B725300E97F73 /* Json.json */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -307,7 +310,6 @@
 				TargetAttributes = {
 					91E1BF281C377CBB00D15B41 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = PKCQ6CD2AP;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -419,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E1BF371C377CBB00D15B41 /* LaunchScreen.storyboard in Resources */,
+				91E59BD01C4B725300E97F73 /* Json.json in Resources */,
 				91087E4A1C3DF92200E4D6B4 /* Images.xcassets in Resources */,
 				91E1BF341C377CBB00D15B41 /* Assets.xcassets in Resources */,
 				9116441F1C422A1B00F9777F /* CookTableViewCell.xib in Resources */,
